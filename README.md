@@ -159,7 +159,7 @@ We will use eventually dictionaries to store opcode methods as following:
     self.pc += 2
 
 
-    # 2. check ops, lookup and execute
+    # check ops, lookup and execute
     extracted_op = self.opcode & 0xf000
     try:
       self.funcmap[extracted_op]() # call the associated method
@@ -174,7 +174,7 @@ they are usually in the format XXXX. So basically we can decipher (aka decrypt) 
 >
 > self.pc is incremented BEFORE cycle(), so any modification to it are retained (This basically works like the **jal, jalr and beq**)
 
-<ins>2. Sample Instruction: clear a screen with 00E0 and return with 00EE
+<ins>2. Sample Instruction: clear a screen with 00E0 and return with 00EE<\ins>
 
 Here, we are going to implement the first and simplest instruction: clear the screen.
 This corresponds to the opcode0x00E0.
